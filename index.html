@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mintesnot YIMER — Portfolio</title>
+  <meta name="description" content="Portfolio of Mintesnot Yimer — Master MIAGE 2IS student seeking a Computer Science / Data / BI internship. Projects, skills, experience, and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;         /* base dark */
+      --bg-alt: #111834;     /* cards */
+      --text: #e6e8ef;       /* main text */
+      --muted: #a7b0c0;      /* secondary text */
+      --brand: #73b4ff;      /* accents */
+      --accent: #6ee7b7;     /* tags / highlights */
+      --border: #1f2a4a;     /* card borders */
+      --shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f7fafc; --bg-alt:#ffffff; --text:#0b1020; --muted:#4b5568; --brand:#2563eb; --accent:#059669; --border:#e5e7eb; --shadow: 0 8px 24px rgba(2,6,23,.08);}  
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";}
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:24px}
+    header{display:flex; gap:16px; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:20; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in hsl, var(--bg) 85%, transparent); border-bottom:1px solid var(--border)}
+    header .brand{display:flex; align-items:center; gap:14px}
+    .avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent)); box-shadow:var(--shadow)}
+    .pill{display:inline-flex; gap:8px; align-items:center; border:1px solid var(--border); padding:6px 10px; border-radius:999px; color:var(--muted); background:var(--bg-alt)}
+    .nav{display:flex; gap:10px; flex-wrap:wrap}
+
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; margin-top:28px}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr;}}
+    .card{background:var(--bg-alt); border:1px solid var(--border); border-radius:16px; padding:22px; box-shadow:var(--shadow)}
+    h1{font-size:clamp(28px, 3.4vw, 44px); line-height:1.08; margin:0}
+    h2{font-size:clamp(20px, 2.2vw, 28px); margin:0 0 12px 0}
+    p{color:var(--muted); line-height:1.6}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-weight:600}
+    .btn.primary{background:linear-gradient(135deg, var(--brand), #8bd2ff); color:#071019; border:none}
+    .btn:hover{transform:translateY(-1px)}
+
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+    .col-4{grid-column:span 4} .col-8{grid-column:span 8}
+    @media (max-width:900px){ .col-4,.col-8{grid-column:1/-1}}
+
+    .kvs{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+    .kv{font-size:13px; padding:7px 10px; border:1px dashed var(--border); border-radius:999px; color:var(--muted)}
+
+    .list{display:flex; flex-direction:column; gap:14px}
+    .item{padding:16px; border:1px solid var(--border); background:linear-gradient(0deg, transparent, rgba(255,255,255,0.01)); border-radius:14px}
+    .item h3{margin:0 0 6px 0; font-size:18px}
+    .item small{color:var(--muted)}
+    .item .meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
+    .tag{font-size:12px; border:1px solid var(--border); padding:4px 8px; border-radius:999px; color:var(--muted)}
+
+    footer{margin:40px 0 12px; color:var(--muted); text-align:center}
+    .lang-switch{font-size:13px; color:var(--muted)}
+  </style>
+  <script>
+    // Simple dark/light toggle (optional)
+    function toggleTheme(){
+      const l = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', l === 'light' ? 'dark' : 'light');
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mintesnot Yimer",
+    "email": "mintesnot.yimer@ut-capitole.fr",
+    "jobTitle": "Master MIAGE 2IS student — Internship seeker",
+    "knowsAbout": ["Python","R","SQL","Power BI","Tableau","Process Mining","Machine Learning","Data Warehousing"],
+    "url": "https://MintesnotYIMER.github.io/",
+    "sameAs": ["https://www.linkedin.com/in/mintesnotnigusu", "https://github.com/MintesnotYIMER"]
+  }
+  </script>
+</head>
+<body>
+  <header class="container">
+    <div class="brand">
+      <div class="avatar" aria-hidden="true"></div>
+      <div>
+        <strong>Mintesnot YIMER</strong><br/>
+        <span class="lang-switch">EN · <a href="#fr">FR</a></span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="pill" href="#projects">Projects</a>
+      <a class="pill" href="#skills">Skills</a>
+      <a class="pill" href="#experience">Experience</a>
+      <a class="pill" href="#education">Education</a>
+      <a class="pill" href="#contact">Contact</a>
+      <button class="pill" onclick="toggleTheme()" aria-label="Toggle theme">Toggle theme</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="card">
+        <h1>Computer Science / Data & BI — Internship Candidate</h1>
+        <p>
+          IT professional (5+ years) now pursuing a Master MIAGE 2IS at Université Toulouse Capitole. Skilled in SQL, Python,
+          Power BI, and MySQL with hands‑on experience in data cleaning, dashboarding and database modelling. Familiar with process
+          analysis and Business Process Intelligence (BPI); able to translate technical data into clear KPIs and actionable insights for non‑technical stakeholders.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Contact me</a>
+          <a class="btn" href="assets/Stage_MintesnotYimer.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="btn" href="#projects">View projects</a>
+        </div>
+        <div class="kvs">
+          <span class="kv">Toulouse, France</span>
+          <span class="kv">Available for internship</span>
+          <span class="kv">English C1 · French A2 · Amharic (Native)</span>
+        </div>
+      </div>
+      <aside class="card">
+        <h2 id="contact">Contact</h2>
+        <div class="list">
+          <div class="item">
+            <h3>Email</h3>
+            <a href="mailto:mintesnot.yimer@ut-capitole.fr">mintesnot.yimer@ut-capitole.fr</a>
+          </div>
+          <div class="item">
+            <h3>Location</h3>
+            <p>Toulouse, France</p>
+          </div>
+          <div class="item">
+            <h3>Links</h3>
+            <p>
+              <a href="https://github.com/MintesnotYIMER" target="_blank" rel="noopener">GitHub</a> ·
+              <a href="https://www.linkedin.com/in/mintesnotnigusu" target="_blank" rel="noopener">LinkedIn</a>
+            </p>
+          </div>
+          <div class="item">
+            <h3>References</h3>
+            <p class="muted">Prof. David Simoncini — Université Toulouse Capitole — <a href="mailto:david.simoncini@ut-capitole.fr">david.simoncini@ut-capitole.fr</a></p>
+            <p class="muted">M. Tesfaye Abera — Commercial Bank of Ethiopia — <a href="mailto:TesfayeAbera@cbe.com.et">TesfayeAbera@cbe.com.et</a></p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="card" style="margin-top:16px">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="col-4">
+          <h3>Languages & Tools</h3>
+          <div class="kvs">
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Java</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Tableau</span>
+            <span class="tag">Git</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+        <div class="col-4">
+          <h3>Concepts</h3>
+          <p class="kvs">
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Business Intelligence</span>
+            <span class="tag">Process Mining</span>
+            <span class="tag">Data Warehousing (Star Schema)</span>
+          </p>
+        </div>
+        <div class="col-4">
+          <h3>Libraries & Soft Skills</h3>
+          <p class="kvs">
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Seaborn</span>
+            <span class="tag">OR-Tools</span>
+            <span class="tag">python-constraint</span>
+            <span class="tag">Analytical thinking</span>
+            <span class="tag">Problem‑solving</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Documentation</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="card" style="margin-top:16px">
+      <h2>Projects</h2>
+      <div class="list">
+        <article class="item">
+          <h3>AI Crossword Solver — Search vs CSP</h3>
+          <small>python-constraint · OR-Tools</small>
+          <p>Built and compared a constraint satisfaction approach and search‑based approach to solve crossword puzzles efficiently.</p>
+          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/crossword-solver-ai" target="_blank">Code / Report</a><span class="tag">Python</span><span class="tag">AI</span></div>
+        </article>
+        <article class="item">
+          <h3>Evolution of Air Quality in the USA (2013–2023)</h3>
+          <small>Exploratory data analysis & visualization</small>
+          <p>Analyzed multi‑year air quality datasets and visualized trends across states; built dashboards and communicated insights.</p>
+          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/usa-air-quality-analysis" target="_blank">Notebook / Dashboard</a><span class="tag">Pandas</span><span class="tag">Matplotlib</span></div>
+        </article>
+        <article class="item">
+          <h3>Business Process Intelligence — Flood Crisis Management</h3>
+          <small>Process discovery & KPI design</small>
+          <p>Modeled flood crisis response processes; extracted KPIs and proposed optimizations to improve throughput and decision‑making.</p>
+          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/business-process-intelligence-flood-management" target="_blank">Paper / Slides</a><span class="tag">Process Mining</span></div>
+        </article>
+        <article class="item">
+          <h3>Obesity Prediction using Machine Learning</h3>
+          <small>Classification & feature engineering</small>
+          <p>Engineered features and compared models to predict obesity classes; evaluated using cross‑validation and interpretable metrics.</p>
+          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/obesity-prediction-ml" target="_blank">Code</a><span class="tag">ML</span><span class="tag">Python</span></div>
+        </article>
+              <article class="item">
+          <h3>ALX Pre‑Course</h3>
+          <small>Foundational exercises & Git workflow</small>
+          <p>Hands‑on practice with Git, GitHub, shell, and programming fundamentals; established consistent commit hygiene and repo structure.</p>
+          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/alx-pre_course" target="_blank">Repository</a><span class="tag">Git</span><span class="tag">CLI</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="card" style="margin-top:16px">
+      <h2>Experience</h2>
+      <div class="list">
+        <article class="item">
+          <h3>Technical Helpdesk / IS Officer — Commercial Bank of Ethiopia</h3>
+          <small>Aug 2019 – Sep 2024</small>
+          <ul>
+            <li>Maintained and monitored network systems and domain servers across multiple branches.</li>
+            <li>Configured ERP user accounts and managed access profiles, ensuring security and compliance.</li>
+            <li>Guaranteed infrastructure availability and reliability.</li>
+          </ul>
+        </article>
+        <article class="item">
+          <h3>Co‑founder & Web Developer (Part‑time) — Yohanneswendemageng Network Company</h3>
+          <small>Jul 2021 – Jul 2022</small>
+          <ul>
+            <li>Designed and developed the company website with WordPress, Elementor and WPBakery.</li>
+            <li>Created responsive themes, optimized performance and solved UI/UX issues.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="card" style="margin-top:16px">
+      <h2>Education</h2>
+      <div class="list">
+        <article class="item">
+          <h3>Master MIAGE 2IS — Innovative Information Systems</h3>
+          <small>Université Toulouse Capitole · Sep 2024 – Aug 2026</small>
+          <p>Coursework: Data Analysis & Visualization, AI, Advanced Databases, Business Intelligence, Process Modeling, IoT & Web Programming, Cyber Security, Project Management.</p>
+        </article>
+        <article class="item">
+          <h3>Bachelor of Science in Computer Science</h3>
+          <small>St. Mary’s University · Sep 2014 – Jul 2018</small>
+          <p>Coursework: Software Engineering, Internet Programming, Advanced Networking, Applied Mathematics, OOP.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section class="card" style="margin-top:16px">
+      <h2>Languages</h2>
+      <p>English (C1), French (A2), Amharic (Native)</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© <span id="y"></span> Mintesnot Yimer — Built for GitHub Pages</p>
+      <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    </footer>
+
+    <!-- FRENCH ANCHOR -->
+    <section id="fr" class="card" style="margin-top:24px">
+      <h2>FR · Résumé rapide</h2>
+      <p>Étudiant en Master MIAGE 2IS, 5+ ans d’expérience. Compétent en SQL, Python, Power BI et MySQL. Intéressé par la Business Intelligence et l’analyse de processus (BPI). Disponible pour un stage.</p>
+    </section>
+  </main>
+</body>
+</html>
