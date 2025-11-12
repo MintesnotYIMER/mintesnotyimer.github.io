@@ -196,38 +196,75 @@
     <!-- PROJECTS -->
     <section id="projects" class="card" style="margin-top:16px">
       <h2>Projects</h2>
-      <div class="list">
-        <article class="item">
-          <h3>AI Crossword Solver — Search vs CSP</h3>
-          <small>python-constraint · OR-Tools</small>
-          <p>Built and compared a constraint satisfaction approach and search‑based approach to solve crossword puzzles efficiently.</p>
-          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/crossword-solver-ai" target="_blank">Code / Report</a><span class="tag">Python</span><span class="tag">AI</span></div>
-        </article>
-        <article class="item">
-          <h3>Evolution of Air Quality in the USA (2013–2023)</h3>
-          <small>Exploratory data analysis & visualization</small>
-          <p>Analyzed multi‑year air quality datasets and visualized trends across states; built dashboards and communicated insights.</p>
-          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/usa-air-quality-analysis" target="_blank">Notebook / Dashboard</a><span class="tag">Pandas</span><span class="tag">Matplotlib</span></div>
-        </article>
-        <article class="item">
-          <h3>Business Process Intelligence — Flood Crisis Management</h3>
-          <small>Process discovery & KPI design</small>
-          <p>Modeled flood crisis response processes; extracted KPIs and proposed optimizations to improve throughput and decision‑making.</p>
-          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/business-process-intelligence-flood-management" target="_blank">Paper / Slides</a><span class="tag">Process Mining</span></div>
-        </article>
-        <article class="item">
-          <h3>Obesity Prediction using Machine Learning</h3>
-          <small>Classification & feature engineering</small>
-          <p>Engineered features and compared models to predict obesity classes; evaluated using cross‑validation and interpretable metrics.</p>
-          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/obesity-prediction-ml" target="_blank">Code</a><span class="tag">ML</span><span class="tag">Python</span></div>
-        </article>
-              <article class="item">
-          <h3>ALX Pre‑Course</h3>
-          <small>Foundational exercises & Git workflow</small>
-          <p>Hands‑on practice with Git, GitHub, shell, and programming fundamentals; established consistent commit hygiene and repo structure.</p>
-          <div class="meta"><a class="tag" href="https://github.com/MintesnotYIMER/alx-pre_course" target="_blank">Repository</a><span class="tag">Git</span><span class="tag">CLI</span></div>
-        </article>
+      <p class="muted">This list updates automatically from my GitHub. Highlighted projects are shown first.</p>
+      <div id="repo-grid" class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px"></div>
+      <div style="margin-top:12px">
+        <a class="btn" href="https://github.com/MintesnotYIMER?tab=repositories" target="_blank" rel="noopener">See all on GitHub</a>
       </div>
+      <script>
+        (function(){
+          const username = 'MintesnotYIMER';
+          const highlight = new Set([
+            'business-process-intelligence-flood-management',
+            'usa-air-quality-analysis',
+            'crossword-solver-ai',
+            'obesity-prediction-ml',
+            'alx-pre_course'
+          ]);
+
+          const grid = document.getElementById('repo-grid');
+          const skeleton = Array.from({length: 6}).map(() => (
+            `<div class="item" style="min-height:150px; border:1px solid var(--border); border-radius:14px; padding:16px; opacity:.6"></div>`
+          )).join('');
+          grid.innerHTML = skeleton;
+
+          function card(r){
+            const topics = (r.topics||[]).slice(0,4).map(t=>`<span class='tag'>${t}</span>`).join('');
+            const lang = r.language ? `<span class='tag'>${r.language}</span>` : '';
+            const star = typeof r.stargazers_count==='number' ? `<span class='tag'>★ ${r.stargazers_count}</span>` : '';
+            const desc = r.description ? r.description.replace(/</g,'&lt;') : '';
+            return `
+              <article class="item" style="display:flex; flex-direction:column; gap:8px">
+                <h3 style="margin:0; font-size:18px"><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h3>
+                <p style="margin:0; color:var(--muted)">${desc}</p>
+                <div class="meta">${lang}${star}${topics}</div>
+                <div><small>Updated: ${new Date(r.pushed_at).toLocaleDateString()}</small></div>
+              </article>`;
+          }
+
+          async function load(){
+            try{
+              const resp = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`, {
+                headers: { 'Accept': 'application/vnd.github+json' }
+              });
+              const data = await resp.json();
+              if(!Array.isArray(data)) throw new Error('Unexpected response');
+              // Exclude forks & archived by default
+              let repos = data.filter(r => !r.fork && !r.archived);
+              // Put highlights first (in the order we listed), then the rest by stars
+              const map = new Map(repos.map(r=>[r.name,r]));
+              const hi = Array.from(highlight).map(n=>map.get(n)).filter(Boolean);
+              const rest = repos.filter(r=>!highlight.has(r.name)).sort((a,b)=> (b.stargazers_count||0) - (a.stargazers_count||0));
+              const ordered = [...hi, ...rest].slice(0, 12);
+
+              // Fetch topics for richer tags
+              const withTopics = await Promise.all(ordered.map(async r => {
+                try{
+                  const t = await fetch(`https://api.github.com/repos/${username}/${r.name}/topics`, { headers: { 'Accept': 'application/vnd.github.mercy-preview+json' }});
+                  const tj = await t.json();
+                  r.topics = tj.names || [];
+                }catch(e){}
+                return r;
+              }));
+
+              grid.innerHTML = withTopics.map(card).join('');
+            }catch(e){
+              grid.innerHTML = `<p style='color:var(--muted)'>Could not load repositories right now. You can still view them on <a href='https://github.com/${username}?tab=repositories' target='_blank' rel='noopener'>GitHub</a>.</p>`;
+            }
+          }
+          load();
+        })();
+      </script>
     </section>
 
     <!-- EXPERIENCE -->
