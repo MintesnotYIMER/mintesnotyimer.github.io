@@ -1,330 +1,967 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
+  <title>Mintesnot Yimer | IT Support & Data/Business Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mintesnot YIMER — Portfolio</title>
-  <meta name="description" content="Portfolio of Mintesnot Yimer — Master MIAGE 2IS student seeking a Computer Science / Data / BI internship. Projects, skills, experience, and contact." />
+  <meta name="description" content="Portfolio of Mintesnot Yimer - IT Support & Application Support | Junior Data & Business Analyst (MIAGE)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Optional icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
-      --bg: #0b1020;         /* base dark */
-      --bg-alt: #111834;     /* cards */
-      --text: #e6e8ef;       /* main text */
-      --muted: #a7b0c0;      /* secondary text */
-      --brand: #73b4ff;      /* accents */
-      --accent: #6ee7b7;     /* tags / highlights */
-      --border: #1f2a4a;     /* card borders */
-      --shadow: 0 8px 24px rgba(0,0,0,.35);
+      --bg: #0b1020;
+      --bg-alt: #111629;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59, 130, 246, 0.1);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
+      --max-width: 1050px;
     }
-    @media (prefers-color-scheme: light) {
-      :root { --bg:#f7fafc; --bg-alt:#ffffff; --text:#0b1020; --muted:#4b5568; --brand:#2563eb; --accent:#059669; --border:#e5e7eb; --shadow: 0 8px 24px rgba(2,6,23,.08);}  
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0; padding:0; background:var(--bg); color:var(--text); font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";}
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1100px; margin:0 auto; padding:24px}
-    header{display:flex; gap:16px; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:20; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in hsl, var(--bg) 85%, transparent); border-bottom:1px solid var(--border)}
-    header .brand{display:flex; align-items:center; gap:14px}
-    .avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--accent)); box-shadow:var(--shadow)}
-    .pill{display:inline-flex; gap:8px; align-items:center; border:1px solid var(--border); padding:6px 10px; border-radius:999px; color:var(--muted); background:var(--bg-alt)}
-    .nav{display:flex; gap:10px; flex-wrap:wrap}
 
-    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; margin-top:28px}
-    @media (max-width:900px){ .hero{grid-template-columns:1fr;}}
-    .card{background:var(--bg-alt); border:1px solid var(--border); border-radius:16px; padding:22px; box-shadow:var(--shadow)}
-    h1{font-size:clamp(28px, 3.4vw, 44px); line-height:1.08; margin:0}
-    h2{font-size:clamp(20px, 2.2vw, 28px); margin:0 0 12px 0}
-    p{color:var(--muted); line-height:1.6}
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
-    .btn{display:inline-flex; align-items:center; gap:10px; padding:12px 16px; border-radius:12px; border:1px solid var(--border); background:var(--bg-alt); color:var(--text); font-weight:600}
-    .btn.primary{background:linear-gradient(135deg, var(--brand), #8bd2ff); color:#071019; border:none}
-    .btn:hover{transform:translateY(-1px)}
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+    }
 
-    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
-    .col-4{grid-column:span 4} .col-8{grid-column:span 8}
-    @media (max-width:900px){ .col-4,.col-8{grid-column:1/-1}}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .kvs{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
-    .kv{font-size:13px; padding:7px 10px; border:1px dashed var(--border); border-radius:999px; color:var(--muted)}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-    .list{display:flex; flex-direction:column; gap:14px}
-    .item{padding:16px; border:1px solid var(--border); background:linear-gradient(0deg, transparent, rgba(255,255,255,0.01)); border-radius:14px}
-    .item h3{margin:0 0 6px 0; font-size:18px}
-    .item small{color:var(--muted)}
-    .item .meta{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
-    .tag{font-size:12px; border:1px solid var(--border); padding:4px 8px; border-radius:999px; color:var(--muted)}
+    /* Layout */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-    footer{margin:40px 0 12px; color:var(--muted); text-align:center}
-    .lang-switch{font-size:13px; color:var(--muted)}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(2,6,23,0.95), rgba(2,6,23,0.7), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #93c5fd, #1d4ed8 40%, #020617 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+      box-shadow: 0 0 25px rgba(59, 130, 246, 0.65);
+    }
+
+    .nav-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-sub {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.83rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: #e5e7eb;
+      border-color: rgba(148,163,184,0.4);
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-sm {
+      font-size: 0.8rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      color: var(--muted);
+      background: rgba(15,23,42,0.7);
+      cursor: pointer;
+    }
+
+    .btn-sm.primary {
+      background: linear-gradient(120deg, #3b82f6, #4f46e5);
+      border: none;
+      color: white;
+      box-shadow: 0 12px 25px rgba(59,130,246,0.45);
+    }
+
+    .btn-sm:hover {
+      filter: brightness(1.05);
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+    }
+
+    section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 999px;
+      background: linear-gradient(to right, rgba(59,130,246,0.12), rgba(79,70,229,0.08));
+      border: 1px solid rgba(59,130,246,0.35);
+      font-size: 0.74rem;
+      color: #bfdbfe;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      max-width: 520px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.3);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .btn-lg {
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.95);
+      color: #e5e7eb;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-lg.primary {
+      background: linear-gradient(120deg, #3b82f6, #4f46e5);
+      border: none;
+      box-shadow: 0 18px 40px rgba(59,130,246,0.55);
+    }
+
+    .btn-lg:hover {
+      filter: brightness(1.05);
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 360px;
+      background: radial-gradient(circle at top, rgba(37,99,235,0.3), #020617 52%);
+      border-radius: 26px;
+      padding: 1.5rem 1.7rem;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px;
+      background: radial-gradient(circle at top right, rgba(96,165,250,0.12), transparent 60%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+      border: 3px solid rgba(15,23,42,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      font-weight: 600;
+      color: #e5e7eb;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 35px rgba(59,130,246,0.85);
+    }
+
+    .hero-card h2 {
+      margin: 0;
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-card p {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .chip {
+      font-size: 0.7rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.25);
+      color: #cbd5f5;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 1.1rem;
+      margin-top: 0.7rem;
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
+    .hero-stat span {
+      display: block;
+    }
+
+    .hero-stat strong {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+    }
+
+    /* Section headings */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* About & Skills */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.2rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(15,23,42,0.96), rgba(15,23,42,0.93));
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.6rem;
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.72);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      font-size: 1rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-block h4 {
+      margin: 0 0 0.35rem;
+      font-size: 0.85rem;
+      color: #bfdbfe;
+    }
+
+    .skill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .skill-list li {
+      margin-bottom: 0.15rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      background: radial-gradient(circle at top left, rgba(37,99,235,0.25), rgba(15,23,42,0.96));
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.2rem 1.2rem;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.7rem;
+      color: #93c5fd;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-size: 0.98rem;
+    }
+
+    .project-card p {
+      margin: 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-tag {
+      font-size: 0.7rem;
+      background: rgba(15,23,42,0.9);
+      border-radius: 999px;
+      padding: 0.18rem 0.55rem;
+      border: 1px solid rgba(148,163,184,0.3);
+      color: #cbd5f5;
+    }
+
+    .project-link {
+      margin-top: auto;
+      font-size: 0.78rem;
+      color: #93c5fd;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .project-link i {
+      font-size: 0.8rem;
+    }
+
+    /* Experience & Education */
+    .timeline {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 1.8rem;
+    }
+
+    .timeline-block h3 {
+      margin: 0 0 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    .timeline-block .meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-block ul {
+      margin: 0.25rem 0 0.7rem;
+      padding-left: 1.1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .timeline-block li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 2fr);
+      gap: 1.6rem;
+    }
+
+    .contact-item {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.35);
+      font-size: 0.78rem;
+      color: #e5e7eb;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(148,163,184,0.4);
+      background: rgba(15,23,42,0.95);
+      padding: 0.55rem 0.7rem;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #60a5fa;
+      box-shadow: 0 0 0 1px rgba(59,130,246,0.45);
+    }
+
+    .contact-form button {
+      justify-self: flex-start;
+      margin-top: 0.2rem;
+    }
+
+    footer {
+      padding: 1.4rem 1.5rem 2rem;
+      border-top: 1px solid rgba(148,163,184,0.2);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      background: rgba(2,6,23,0.95);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero,
+      .two-col,
+      .timeline,
+      .contact-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+      .nav {
+        padding-inline: 1rem;
+      }
+      section {
+        padding-inline: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-card {
+        padding: 1.2rem 1.3rem;
+      }
+    }
   </style>
-  <script>
-    // Simple dark/light toggle (optional)
-    function toggleTheme(){
-      const l = document.documentElement.getAttribute('data-theme');
-      document.documentElement.setAttribute('data-theme', l === 'light' ? 'dark' : 'light');
-    }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Mintesnot Yimer",
-    "email": "mintesnot.yimer@ut-capitole.fr",
-    "jobTitle": "Master MIAGE 2IS student — Internship seeker",
-    "knowsAbout": ["Python","R","SQL","Power BI","Tableau","Process Mining","Machine Learning","Data Warehousing"],
-    "url": "https://MintesnotYIMER.github.io/",
-    "sameAs": ["https://www.linkedin.com/in/mintesnotnigusu", "https://github.com/MintesnotYIMER"]
-  }
-  </script>
 </head>
 <body>
-  <header class="container">
-    <div class="brand">
-      <div class="avatar" aria-hidden="true"></div>
-      <div>
-        <strong>Mintesnot YIMER</strong><br/>
-        <span class="lang-switch">EN · <a href="#fr">FR</a></span>
+  <div class="page">
+    <!-- NAVBAR -->
+    <header>
+      <div class="nav">
+        <div class="nav-left">
+          <div class="logo-circle">M</div>
+          <div>
+            <div class="nav-title">Mintesnot Yimer</div>
+            <span class="nav-sub">IT Support · App Support · Data & Business Analysis</span>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-cta">
+          <a href="#contact" class="btn-sm">Contact</a>
+          <a href="#" class="btn-sm primary" target="_blank" rel="noopener">Download CV</a>
+        </div>
       </div>
-    </div>
-    <nav class="nav">
-      <a class="pill" href="#projects">Projects</a>
-      <a class="pill" href="#skills">Skills</a>
-      <a class="pill" href="#experience">Experience</a>
-      <a class="pill" href="#education">Education</a>
-      <a class="pill" href="#contact">Contact</a>
-      <button class="pill" onclick="toggleTheme()" aria-label="Toggle theme">Toggle theme</button>
-    </nav>
-  </header>
+    </header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="card">
-        <h1>Computer Science / Data & BI — Internship Candidate</h1>
-        <p>
-          IT professional (5+ years) now pursuing a Master MIAGE 2IS at Université Toulouse Capitole. Skilled in SQL, Python,
-          Power BI, and MySQL with hands‑on experience in data cleaning, dashboarding and database modelling. Familiar with process
-          analysis and Business Process Intelligence (BPI); able to translate technical data into clear KPIs and actionable insights for non‑technical stakeholders.
-        </p>
-        <div class="cta">
-          <a class="btn primary" href="#contact">Contact me</a>
-          <a class="btn" href="assets/Stage_MintesnotYimer.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
-          <a class="btn" href="#projects">View projects</a>
-        </div>
-        <div class="kvs">
-          <span class="kv">Toulouse, France</span>
-          <span class="kv">Available for internship</span>
-          <span class="kv">English C1 · French A2 · Amharic (Native)</span>
-        </div>
-      </div>
-      <aside class="card">
-        <h2 id="contact">Contact</h2>
-        <div class="list">
-          <div class="item">
-            <h3>Email</h3>
-            <a href="mailto:mintesnot.yimer@ut-capitole.fr">mintesnot.yimer@ut-capitole.fr</a>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="hero-pill">
+            <i class="fa-solid fa-circle-dot"></i>
+            Open to internships · Application Support · Data/Business Analysis
           </div>
-          <div class="item">
-            <h3>Location</h3>
-            <p>Toulouse, France</p>
+          <h1 class="hero-title">IT Support & Application Support <br> Junior Data & Business Analyst (MIAGE)</h1>
+          <p class="hero-subtitle">
+            I combine 5+ years of IT Support and Information Systems experience in banking with
+            a MIAGE Master 2IS to bridge <strong>technical operations, data insights, and business needs</strong>.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">SQL · Power BI · Python</span>
+            <span class="tag">IT Support · Application Support</span>
+            <span class="tag">Business Intelligence · Process Mining</span>
+            <span class="tag">MIAGE 2IS – Toulouse Capitole</span>
           </div>
-          <div class="item">
-            <h3>Links</h3>
+          <div class="hero-actions">
+            <a href="https://github.com/MintesnotYIMER" class="btn-lg primary" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> View GitHub
+            </a>
+            <a href="https://www.linkedin.com" class="btn-lg" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin"></i> View LinkedIn
+            </a>
+          </div>
+          <div class="hero-note">
+            Currently looking for an internship in <strong>Application Support, Data Analysis, or Business Analysis</strong>.
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-avatar">M</div>
+            <h2>Mintesnot Yimer</h2>
+            <p>IT Support & Application Support · Junior Data & Business Analyst</p>
+            <p><i class="fa-solid fa-location-dot"></i> Toulouse, France</p>
+            <div class="hero-chip-row">
+              <span class="chip">5+ years IT Support</span>
+              <span class="chip">Banking Sector</span>
+              <span class="chip">MIAGE 2IS</span>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <span><strong>5+ yrs</strong></span>
+                <span>IT & IS Experience</span>
+              </div>
+              <div class="hero-stat">
+                <span><strong>4+</strong></span>
+                <span>Data / AI Projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT & SKILLS -->
+      <section id="about">
+        <div class="section-title">About Me</div>
+        <div class="section-subtitle">
+          IT Support & Application Support professional transitioning into Data Analysis and Business Analysis.
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <h3>Who I am</h3>
             <p>
-              <a href="https://github.com/MintesnotYIMER" target="_blank" rel="noopener">GitHub</a> ·
-              <a href="https://www.linkedin.com/in/mintesnotnigusu" target="_blank" rel="noopener">LinkedIn</a>
+              I am an IT professional with <strong>5+ years of experience</strong> in IT Support, System Administration,
+              and Application Support in the banking sector. I am currently pursuing a
+              <strong>Master MIAGE 2IS – Innovative Information Systems</strong> at Université Toulouse Capitole.
+            </p>
+            <p>
+              I enjoy solving technical problems, analyzing data, improving workflows, and building clear dashboards
+              that help stakeholders make better decisions. My hybrid profile allows me to connect <strong>IT operations,
+              data insights, and business expectations</strong>.
+            </p>
+            <p>
+              I'm actively looking for an internship in <strong>Application Support, Data Analysis, Business Analysis,</strong>
+              or <strong>Functional IT roles</strong>, where I can bring both my support experience and analytical skills.
             </p>
           </div>
-          <div class="item">
-            <h3>References</h3>
-            <p class="muted">Prof. David Simoncini — Université Toulouse Capitole — <a href="mailto:david.simoncini@ut-capitole.fr">david.simoncini@ut-capitole.fr</a></p>
-            <p class="muted">M. Tesfaye Abera — Commercial Bank of Ethiopia — <a href="mailto:TesfayeAbera@cbe.com.et">TesfayeAbera@cbe.com.et</a></p>
+
+          <div id="skills" class="card">
+            <h3>Skills Overview</h3>
+            <div class="skills-grid">
+              <div class="skill-block">
+                <h4>Data & Tools</h4>
+                <ul class="skill-list">
+                  <li>SQL (MySQL, Oracle)</li>
+                  <li>Power BI, Excel (advanced)</li>
+                  <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
+                  <li>Git & GitHub</li>
+                  <li>WordPress (Elementor, WPBakery)</li>
+                </ul>
+              </div>
+              <div class="skill-block">
+                <h4>Concepts</h4>
+                <ul class="skill-list">
+                  <li>Data Cleaning & Visualization</li>
+                  <li>Business Intelligence (BI)</li>
+                  <li>Process Mining & BPI</li>
+                  <li>Data Modelling (Star Schema)</li>
+                  <li>Machine Learning (basics)</li>
+                  <li>KPI Reporting & Dashboards</li>
+                </ul>
+              </div>
+              <div class="skill-block">
+                <h4>IT & Application Support</h4>
+                <ul class="skill-list">
+                  <li>Active Directory, Windows Server</li>
+                  <li>Linux (basics), Networking</li>
+                  <li>ERP User Management & Access Control</li>
+                  <li>Incident & Problem Management (ITIL mindset)</li>
+                  <li>System Monitoring & Troubleshooting</li>
+                  <li>Ticketing Tools (e.g., ServiceNow, Jira)</li>
+                </ul>
+              </div>
+              <div class="skill-block">
+                <h4>Soft Skills & Other</h4>
+                <ul class="skill-list">
+                  <li>Analytical Thinking & Problem Solving</li>
+                  <li>Communication with Technical & Business Teams</li>
+                  <li>Technical Documentation</li>
+                  <li>Teamwork & Autonomy</li>
+                  <li>Project & Time Management (academic)</li>
+                  <li>Languages: English (C1), French (A2), Amharic (native)</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </aside>
-    </section>
+      </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="card" style="margin-top:16px">
-      <h2>Skills</h2>
-      <div class="grid">
-        <div class="col-4">
-          <h3>Languages & Tools</h3>
-          <div class="kvs">
-            <span class="tag">Python</span>
-            <span class="tag">R</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Java</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Tableau</span>
-            <span class="tag">Git</span>
-            <span class="tag">Linux</span>
-            <span class="tag">Oracle</span>
-            <span class="tag">MySQL</span>
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="section-title">Projects</div>
+        <div class="section-subtitle">
+          A selection of academic and personal projects in data analysis, process intelligence, and AI.
+        </div>
+        <div class="projects-grid">
+          <!-- BPI Project -->
+          <div class="project-card">
+            <div class="project-badge">
+              <i class="fa-solid fa-diagram-project"></i> Business Process Intelligence
+            </div>
+            <h3>Flood Crisis Management – Process Mining</h3>
+            <p>
+              Process mining project analyzing flood crisis response workflows using event logs.
+              Extracted KPIs, identified bottlenecks, and proposed improvements to the crisis management process.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Process Mining</span>
+              <span class="project-tag">BPI</span>
+              <span class="project-tag">Python</span>
+            </div>
+            <a class="project-link" href="https://github.com/MintesnotYIMER/business-process-intelligence-flood-management" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> View repository
+            </a>
+          </div>
+
+          <!-- Air Quality -->
+          <div class="project-card">
+            <div class="project-badge">
+              <i class="fa-solid fa-chart-line"></i> Data Analysis & Visualization
+            </div>
+            <h3>Air Quality Analysis (USA, 2013–2023)</h3>
+            <p>
+              Exploratory analysis of 10 years of air quality data with Python and Power BI. 
+              Built dashboards to visualize pollutant trends, geo-distribution, and correlations.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Power BI</span>
+              <span class="project-tag">Pandas</span>
+            </div>
+            <a class="project-link" href="#" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> Add GitHub link here
+            </a>
+          </div>
+
+          <!-- Obesity ML -->
+          <div class="project-card">
+            <div class="project-badge">
+              <i class="fa-solid fa-brain"></i> Machine Learning
+            </div>
+            <h3>Obesity Prediction – Classification Model</h3>
+            <p>
+              Built a machine learning model to predict obesity risk using lifestyle and health indicators,
+              including data preprocessing, feature engineering, and model evaluation.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Scikit-learn</span>
+              <span class="project-tag">EDA</span>
+            </div>
+            <a class="project-link" href="#" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> Add GitHub link here
+            </a>
+          </div>
+
+          <!-- CSP Crossword -->
+          <div class="project-card">
+            <div class="project-badge">
+              <i class="fa-solid fa-puzzle-piece"></i> Algorithms & CSP
+            </div>
+            <h3>Crossword Solver – CSP with OR-Tools</h3>
+            <p>
+              Implemented a crossword puzzle solver using constraint satisfaction techniques with Google OR-Tools,
+              comparing search strategies for performance.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">OR-Tools</span>
+              <span class="project-tag">CSP</span>
+            </div>
+            <a class="project-link" href="#" target="_blank" rel="noopener">
+              <i class="fa-brands fa-github"></i> Add GitHub link here
+            </a>
           </div>
         </div>
-        <div class="col-4">
-          <h3>Concepts</h3>
-          <p class="kvs">
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Business Intelligence</span>
-            <span class="tag">Process Mining</span>
-            <span class="tag">Data Warehousing (Star Schema)</span>
-          </p>
+      </section>
+
+      <!-- EXPERIENCE & EDUCATION -->
+      <section id="experience">
+        <div class="section-title">Experience & Education</div>
+        <div class="section-subtitle">
+          Professional background in IT & Information Systems, supported by a strong academic foundation in Computer Science and MIAGE.
         </div>
-        <div class="col-4">
-          <h3>Libraries & Soft Skills</h3>
-          <p class="kvs">
-            <span class="tag">Pandas</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">Seaborn</span>
-            <span class="tag">OR-Tools</span>
-            <span class="tag">python-constraint</span>
-            <span class="tag">Analytical thinking</span>
-            <span class="tag">Problem‑solving</span>
-            <span class="tag">Teamwork</span>
-            <span class="tag">Documentation</span>
-          </p>
+
+        <div class="timeline">
+          <div class="card">
+            <h3>Experience</h3>
+
+            <div class="timeline-block">
+              <h3>Technical Helpdesk / Information Systems Officer</h3>
+              <div class="meta">Commercial Bank of Ethiopia · Aug 2019 – Sep 2024 · Addis Ababa</div>
+              <ul>
+                <li>Ensured availability and performance of IT infrastructure across multiple branches.</li>
+                <li>Maintained network systems, domain servers, and Active Directory.</li>
+                <li>Managed ERP user accounts and access rights to support operations securely.</li>
+                <li>Handled incident and problem resolution (L1/L2), following ITIL mindset.</li>
+                <li>Collaborated with infrastructure, security, and business teams to resolve complex issues.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-block">
+              <h3>Co-founder & Web Developer (Part-time)</h3>
+              <div class="meta">Yohanneswendemageng Network Company · Jul 2021 – Jul 2022</div>
+              <ul>
+                <li>Designed and developed the company website using WordPress, Elementor, and WPBakery.</li>
+                <li>Created responsive themes and improved UI/UX and site performance.</li>
+                <li>Maintained content updates and solved technical issues.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Education</h3>
+            <div class="timeline-block">
+              <h3>Master MIAGE 2IS – Innovative Information Systems</h3>
+              <div class="meta">Université Toulouse Capitole · 2024 – 2026</div>
+              <ul>
+                <li>Data Analysis & Visualization, Advanced Artificial Intelligence.</li>
+                <li>Advanced Databases, Business Intelligence, Business Process Modelling.</li>
+                <li>Internet of Things, Cybersecurity, Project Management.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-block">
+              <h3>Bachelor of Science in Computer Science</h3>
+              <div class="meta">St. Mary’s University · 2014 – 2018</div>
+              <ul>
+                <li>Software Engineering, Internet Programming, Advanced Networking.</li>
+                <li>Applied Mathematics, Object-Oriented Programming.</li>
+                <li>CGPA: 18.45 / 20.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="card" style="margin-top:16px">
-      <h2>Projects</h2>
-      <p class="muted">This list updates automatically from my GitHub. Highlighted projects are shown first.</p>
-      <div id="repo-grid" class="grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px"></div>
-      <div style="margin-top:12px">
-        <a class="btn" href="https://github.com/MintesnotYIMER?tab=repositories" target="_blank" rel="noopener">See all on GitHub</a>
-      </div>
-      <script>
-        (function(){
-          const username = 'MintesnotYIMER';
-          const highlight = new Set([
-            'business-process-intelligence-flood-management',
-            'usa-air-quality-analysis',
-            'crossword-solver-ai',
-            'obesity-prediction-ml',
-            'alx-pre_course'
-          ]);
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-title">Contact</div>
+        <div class="section-subtitle">
+          Interested in working together or discussing an opportunity? Feel free to reach out.
+        </div>
 
-          const grid = document.getElementById('repo-grid');
-          const skeleton = Array.from({length: 6}).map(() => (
-            `<div class="item" style="min-height:150px; border:1px solid var(--border); border-radius:14px; padding:16px; opacity:.6"></div>`
-          )).join('');
-          grid.innerHTML = skeleton;
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Let’s connect</h3>
+            <p style="font-size:0.85rem; color:var(--muted);">
+              I am open to internships and opportunities in <strong>Application Support, Data Analysis, Business Analysis,</strong>
+              and related IT/functional roles.
+            </p>
 
-          function card(r){
-            const topics = (r.topics||[]).slice(0,4).map(t=>`<span class='tag'>${t}</span>`).join('');
-            const lang = r.language ? `<span class='tag'>${r.language}</span>` : '';
-            const star = typeof r.stargazers_count==='number' ? `<span class='tag'>★ ${r.stargazers_count}</span>` : '';
-            const desc = r.description ? r.description.replace(/</g,'&lt;') : '';
-            return `
-              <article class="item" style="display:flex; flex-direction:column; gap:8px">
-                <h3 style="margin:0; font-size:18px"><a href="${r.html_url}" target="_blank" rel="noopener">${r.name}</a></h3>
-                <p style="margin:0; color:var(--muted)">${desc}</p>
-                <div class="meta">${lang}${star}${topics}</div>
-                <div><small>Updated: ${new Date(r.pushed_at).toLocaleDateString()}</small></div>
-              </article>`;
-          }
+            <div class="contact-item">
+              <span class="contact-pill"><i class="fa-solid fa-envelope"></i> mintesnot.yimer@ut-capitole.fr</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-pill"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-pill"><i class="fa-brands fa-github"></i> github.com/MintesnotYIMER</span>
+            </div>
+          </div>
 
-          async function load(){
-            try{
-              const resp = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=updated`, {
-                headers: { 'Accept': 'application/vnd.github+json' }
-              });
-              const data = await resp.json();
-              if(!Array.isArray(data)) throw new Error('Unexpected response');
-              // Exclude forks & archived by default
-              let repos = data.filter(r => !r.fork && !r.archived);
-              // Put highlights first (in the order we listed), then the rest by stars
-              const map = new Map(repos.map(r=>[r.name,r]));
-              const hi = Array.from(highlight).map(n=>map.get(n)).filter(Boolean);
-              const rest = repos.filter(r=>!highlight.has(r.name)).sort((a,b)=> (b.stargazers_count||0) - (a.stargazers_count||0));
-              const ordered = [...hi, ...rest].slice(0, 12);
+          <div class="card">
+            <h3>Quick message</h3>
+            <!-- Non-functional form (for static GitHub Pages) -->
+            <form class="contact-form">
+              <input type="text" name="name" placeholder="Your name" />
+              <input type="email" name="email" placeholder="Your email" />
+              <textarea name="message" rows="4" placeholder="Your message"></textarea>
+              <button type="button" class="btn-lg primary">
+                <i class="fa-solid fa-paper-plane"></i> Send (use email above)
+              </button>
+              <p style="font-size:0.7rem; color:var(--muted); margin:0.4rem 0 0;">
+                This is a static form. To contact me, please send an email directly.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
-              // Fetch topics for richer tags
-              const withTopics = await Promise.all(ordered.map(async r => {
-                try{
-                  const t = await fetch(`https://api.github.com/repos/${username}/${r.name}/topics`, { headers: { 'Accept': 'application/vnd.github.mercy-preview+json' }});
-                  const tj = await t.json();
-                  r.topics = tj.names || [];
-                }catch(e){}
-                return r;
-              }));
-
-              grid.innerHTML = withTopics.map(card).join('');
-            }catch(e){
-              grid.innerHTML = `<p style='color:var(--muted)'>Could not load repositories right now. You can still view them on <a href='https://github.com/${username}?tab=repositories' target='_blank' rel='noopener'>GitHub</a>.</p>`;
-            }
-          }
-          load();
-        })();
-      </script>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="card" style="margin-top:16px">
-      <h2>Experience</h2>
-      <div class="list">
-        <article class="item">
-          <h3>Technical Helpdesk / IS Officer — Commercial Bank of Ethiopia</h3>
-          <small>Aug 2019 – Sep 2024</small>
-          <ul>
-            <li>Maintained and monitored network systems and domain servers across multiple branches.</li>
-            <li>Configured ERP user accounts and managed access profiles, ensuring security and compliance.</li>
-            <li>Guaranteed infrastructure availability and reliability.</li>
-          </ul>
-        </article>
-        <article class="item">
-          <h3>Co‑founder & Web Developer (Part‑time) — Yohanneswendemageng Network Company</h3>
-          <small>Jul 2021 – Jul 2022</small>
-          <ul>
-            <li>Designed and developed the company website with WordPress, Elementor and WPBakery.</li>
-            <li>Created responsive themes, optimized performance and solved UI/UX issues.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="card" style="margin-top:16px">
-      <h2>Education</h2>
-      <div class="list">
-        <article class="item">
-          <h3>Master MIAGE 2IS — Innovative Information Systems</h3>
-          <small>Université Toulouse Capitole · Sep 2024 – Aug 2026</small>
-          <p>Coursework: Data Analysis & Visualization, AI, Advanced Databases, Business Intelligence, Process Modeling, IoT & Web Programming, Cyber Security, Project Management.</p>
-        </article>
-        <article class="item">
-          <h3>Bachelor of Science in Computer Science</h3>
-          <small>St. Mary’s University · Sep 2014 – Jul 2018</small>
-          <p>Coursework: Software Engineering, Internet Programming, Advanced Networking, Applied Mathematics, OOP.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- LANGUAGES -->
-    <section class="card" style="margin-top:16px">
-      <h2>Languages</h2>
-      <p>English (C1), French (A2), Amharic (Native)</p>
-    </section>
-
-    <!-- FOOTER -->
     <footer>
-      <p>© <span id="y"></span> Mintesnot Yimer — Built for GitHub Pages</p>
-      <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+      © <span id="year"></span> Mintesnot Yimer · Built with HTML & CSS · Hosted on GitHub Pages
     </footer>
+  </div>
 
-    <!-- FRENCH ANCHOR -->
-    <section id="fr" class="card" style="margin-top:24px">
-      <h2>FR · Résumé rapide</h2>
-      <p>Étudiant en Master MIAGE 2IS, 5+ ans d’expérience. Compétent en SQL, Python, Power BI et MySQL. Intéressé par la Business Intelligence et l’analyse de processus (BPI). Disponible pour un stage.</p>
-    </section>
-  </main>
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
