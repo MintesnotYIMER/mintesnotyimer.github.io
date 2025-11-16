@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mintesnot Yimer | Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projects of Mintesnot Yimer - Data, AI, Business Process Intelligence">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* SAME STYLES AS INDEX, SHORTENED TO KEY PARTS */
+    :root {
+      --bg: #0b1020;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --max-width: 1050px;
+      --radius-md: 12px;
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+    }
+    a { color: inherit; text-decoration: none; }
+
+    [data-lang="en"] .fr { display: none; }
+    [data-lang="fr"] .en { display: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(2,6,23,0.95), rgba(2,6,23,0.7), transparent);
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+    }
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .nav-left { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-circle {
+      width: 34px; height: 34px; border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #93c5fd, #1d4ed8 40%, #020617 100%);
+      display:flex;align-items:center;justify-content:center;
+      color:#e5e7eb;font-weight:600;font-size:0.9rem;
+    }
+    .nav-title { font-size:0.95rem;font-weight:500; }
+    .nav-sub { display:block;font-size:0.7rem;color:var(--muted); }
+    .nav-links { display:flex;align-items:center;gap:1.25rem;font-size:0.83rem; }
+    .nav-links a { color:var(--muted);padding-bottom:2px;border-bottom:1px solid transparent; }
+    .nav-links a:hover { color:#e5e7eb;border-color:rgba(148,163,184,0.4); }
+    .btn-sm {
+      font-size:0.8rem;padding:0.35rem 0.9rem;border-radius:999px;
+      border:1px solid rgba(148,163,184,0.4);background:rgba(15,23,42,0.7);color:var(--muted);
+      cursor:pointer;
+    }
+
+    main { max-width: var(--max-width); margin: 0 auto; padding: 2.8rem 1.5rem 3rem; }
+    .section-title { font-size:1.4rem;font-weight:600;margin-bottom:0.4rem; }
+    .section-subtitle { font-size:0.9rem;color:var(--muted);margin-bottom:1.6rem; }
+
+    .projects-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:1.2rem;
+    }
+    .project-card {
+      background: radial-gradient(circle at top left, rgba(37,99,235,0.25), rgba(15,23,42,0.96));
+      border-radius: var(--radius-md);
+      padding:1.1rem 1.2rem 1.2rem;
+      border:1px solid rgba(148,163,184,0.35);
+      box-shadow:0 18px 40px rgba(15,23,42,0.8);
+      display:flex;
+      flex-direction:column;
+      gap:0.45rem;
+    }
+    .project-badge {
+      display:inline-flex;align-items:center;gap:0.4rem;
+      background:rgba(15,23,42,0.9);border-radius:999px;
+      padding:0.2rem 0.6rem;font-size:0.7rem;color:#93c5fd;margin-bottom:0.2rem;
+    }
+    .project-card h3 { margin:0;font-size:0.98rem; }
+    .project-card p { margin:0;font-size:0.8rem;color:var(--muted); }
+    .project-tags {
+      display:flex;flex-wrap:wrap;gap:0.25rem;margin-top:0.2rem;margin-bottom:0.35rem;
+    }
+    .project-tag {
+      font-size:0.7rem;background:rgba(15,23,42,0.9);border-radius:999px;
+      padding:0.18rem 0.55rem;border:1px solid rgba(148,163,184,0.3);color:#cbd5f5;
+    }
+    .project-link {
+      margin-top:auto;font-size:0.78rem;color:#93c5fd;display:inline-flex;align-items:center;gap:0.35rem;
+    }
+    footer {
+      padding:1.4rem 1.5rem 2rem;
+      border-top:1px solid rgba(148,163,184,0.2);
+      font-size:0.75rem;color:var(--muted);
+      text-align:center;
+      background:rgba(2,6,23,0.95);
+    }
+    @media(max-width:720px){
+      .nav{padding-inline:1rem;}
+      main{padding-inline:1rem;}
+      .nav-links{display:none;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="logo-circle">M</div>
+        <div>
+          <div class="nav-title">Mintesnot Yimer</div>
+          <span class="nav-sub en">Projects · Data · BI · BPI</span>
+          <span class="nav-sub fr">Projets · Data · BI · BPI</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="en">Home</a>
+        <a href="index.html" class="fr">Accueil</a>
+        <a href="index.html#about" class="en">About</a>
+        <a href="index.html#about" class="fr">À propos</a>
+        <a href="index.html#contact" class="en">Contact</a>
+        <a href="index.html#contact" class="fr">Contact</a>
+      </nav>
+      <div>
+        <button class="btn-sm" id="lang-en">EN</button>
+        <button class="btn-sm" id="lang-fr">FR</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="section-title en">Projects</div>
+    <div class="section-title fr">Projets</div>
+    <div class="section-subtitle en">
+      A more detailed view of my academic and personal projects in data, AI, and process intelligence.
+    </div>
+    <div class="section-subtitle fr">
+      Une vue détaillée de mes projets académiques et personnels en data, IA et process intelligence.
+    </div>
+
+    <div class="projects-grid">
+      <!-- BPI -->
+      <div class="project-card">
+        <div class="project-badge">
+          <i class="fa-solid fa-diagram-project"></i> BPI
+        </div>
+        <h3 class="en">Flood Crisis Management – Process Mining</h3>
+        <h3 class="fr">Gestion de crise d’inondation – Process Mining</h3>
+        <p class="en">
+          Process mining project using crisis-management event logs to analyze response workflows,
+          identify bottlenecks and optimize process performance.
+        </p>
+        <p class="fr">
+          Projet de process mining utilisant des journaux d’événements de gestion de crise pour analyser
+          les workflows de réponse, identifier les goulots d’étranglement et optimiser la performance.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Process Mining</span>
+          <span class="project-tag">BPI</span>
+          <span class="project-tag">Python</span>
+        </div>
+        <a class="project-link" href="https://github.com/MintesnotYIMER/business-process-intelligence-flood-management" target="_blank">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+
+      <!-- Air Quality -->
+      <div class="project-card">
+        <div class="project-badge">
+          <i class="fa-solid fa-chart-line"></i> Data Analysis
+        </div>
+        <h3 class="en">Air Quality Analysis (USA, 2013–2023)</h3>
+        <h3 class="fr">Analyse de la qualité de l’air (USA, 2013–2023)</h3>
+        <p class="en">
+          Exploratory analysis of 10 years of air quality data using Python and Power BI.
+          Built dashboards to visualize pollutant trends, geographic distribution and correlations.
+        </p>
+        <p class="fr">
+          Analyse exploratoire de 10 ans de données de qualité de l’air avec Python et Power BI.
+          Création de tableaux de bord pour visualiser l’évolution des polluants, la répartition géographique et les corrélations.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Power BI</span>
+          <span class="project-tag">Pandas</span>
+        </div>
+        <a class="project-link" href="#" target="_blank">
+          <i class="fa-brands fa-github"></i> Add GitHub link
+        </a>
+      </div>
+
+      <!-- Obesity ML -->
+      <div class="project-card">
+        <div class="project-badge">
+          <i class="fa-solid fa-brain"></i> Machine Learning
+        </div>
+        <h3 class="en">Obesity Prediction – Classification</h3>
+        <h3 class="fr">Prédiction de l’obésité – Classification</h3>
+        <p class="en">
+          Built a classification model to predict obesity risk from lifestyle and health features,
+          including data preprocessing, feature engineering and model evaluation.
+        </p>
+        <p class="fr">
+          Modèle de classification pour prédire le risque d’obésité à partir de variables de style de vie
+          et de santé, avec préparation des données, feature engineering et évaluation du modèle.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Scikit-learn</span>
+          <span class="project-tag">EDA</span>
+        </div>
+        <a class="project-link" href="#" target="_blank">
+          <i class="fa-brands fa-github"></i> Add GitHub link
+        </a>
+      </div>
+
+      <!-- CSP Crossword -->
+      <div class="project-card">
+        <div class="project-badge">
+          <i class="fa-solid fa-puzzle-piece"></i> CSP & Algorithms
+        </div>
+        <h3 class="en">Crossword Solver – CSP with OR-Tools</h3>
+        <h3 class="fr">Solveur de mots croisés – CSP avec OR-Tools</h3>
+        <p class="en">
+          Implemented a crossword puzzle solver using constraint satisfaction techniques with Google OR-Tools,
+          comparing different search strategies.
+        </p>
+        <p class="fr">
+          Implémentation d’un solveur de mots croisés utilisant des techniques de satisfaction de contraintes
+          avec Google OR-Tools, comparaison de différentes stratégies de recherche.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">OR-Tools</span>
+          <span class="project-tag">CSP</span>
+        </div>
+        <a class="project-link" href="#" target="_blank">
+          <i class="fa-brands fa-github"></i> Add GitHub link
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Mintesnot Yimer · Projects · GitHub Pages
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    document.getElementById("lang-en").addEventListener("click", () => {
+      root.setAttribute("data-lang","en");
+    });
+    document.getElementById("lang-fr").addEventListener("click", () => {
+      root.setAttribute("data-lang","fr");
+    });
+  </script>
+</body>
+</html>
