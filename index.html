@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Mintesnot Yimer | IT Support & Data/Business Analyst</title>
@@ -7,7 +7,6 @@
   <meta name="description" content="Portfolio of Mintesnot Yimer - IT Support & Application Support | Junior Data & Business Analyst (MIAGE)">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Optional icons (Font Awesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     :root {
@@ -47,7 +46,10 @@
       display: block;
     }
 
-    /* Layout */
+    /* language visibility */
+    [data-lang="en"] .fr { display: none; }
+    [data-lang="fr"] .en { display: none; }
+
     .page {
       min-height: 100vh;
       display: flex;
@@ -149,10 +151,7 @@
       filter: brightness(1.05);
     }
 
-    /* Main content */
-    main {
-      flex: 1;
-    }
+    main { flex: 1; }
 
     section {
       max-width: var(--max-width);
@@ -160,7 +159,7 @@
       padding: 2.8rem 1.5rem;
     }
 
-    /* Hero */
+    /* hero */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
@@ -240,19 +239,14 @@
       box-shadow: 0 18px 40px rgba(59,130,246,0.55);
     }
 
-    .btn-lg:hover {
-      filter: brightness(1.05);
-    }
+    .btn-lg:hover { filter: brightness(1.05); }
 
     .hero-note {
       font-size: 0.78rem;
       color: var(--muted);
     }
 
-    .hero-right {
-      display: flex;
-      justify-content: center;
-    }
+    .hero-right { display: flex; justify-content: center; }
 
     .hero-card {
       width: 100%;
@@ -329,16 +323,9 @@
       color: var(--muted);
     }
 
-    .hero-stat span {
-      display: block;
-    }
+    .hero-stat span { display: block; }
+    .hero-stat strong { font-size: 0.95rem; color: #e5e7eb; }
 
-    .hero-stat strong {
-      font-size: 0.95rem;
-      color: #e5e7eb;
-    }
-
-    /* Section headings */
     .section-title {
       font-size: 1.25rem;
       font-weight: 600;
@@ -351,7 +338,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* About & Skills */
     .two-col {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
@@ -400,11 +386,8 @@
       color: var(--muted);
     }
 
-    .skill-list li {
-      margin-bottom: 0.15rem;
-    }
+    .skill-list li { margin-bottom: 0.15rem; }
 
-    /* Projects */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -471,11 +454,8 @@
       gap: 0.35rem;
     }
 
-    .project-link i {
-      font-size: 0.8rem;
-    }
+    .project-link i { font-size: 0.8rem; }
 
-    /* Experience & Education */
     .timeline {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
@@ -500,11 +480,8 @@
       color: var(--muted);
     }
 
-    .timeline-block li {
-      margin-bottom: 0.25rem;
-    }
+    .timeline-block li { margin-bottom: 0.25rem; }
 
-    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.7fr) minmax(0, 2fr);
@@ -570,7 +547,6 @@
       background: rgba(2,6,23,0.95);
     }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .hero,
       .two-col,
@@ -578,52 +554,49 @@
       .contact-grid {
         grid-template-columns: minmax(0,1fr);
       }
-      .hero-right {
-        order: -1;
-      }
+      .hero-right { order: -1; }
     }
 
     @media (max-width: 720px) {
-      .nav-links {
-        display: none;
-      }
-      .nav {
-        padding-inline: 1rem;
-      }
-      section {
-        padding-inline: 1rem;
-      }
+      .nav-links { display: none; }
+      .nav { padding-inline: 1rem; }
+      section { padding-inline: 1rem; }
     }
 
     @media (max-width: 480px) {
-      .hero-card {
-        padding: 1.2rem 1.3rem;
-      }
+      .hero-card { padding: 1.2rem 1.3rem; }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- NAVBAR -->
     <header>
       <div class="nav">
         <div class="nav-left">
           <div class="logo-circle">M</div>
           <div>
             <div class="nav-title">Mintesnot Yimer</div>
-            <span class="nav-sub">IT Support · App Support · Data & Business Analysis</span>
+            <span class="nav-sub en">IT Support · App Support · Data & Business Analysis</span>
+            <span class="nav-sub fr">Support Informatique · Support Applicatif · Data & Business Analysis</span>
           </div>
         </div>
         <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#contact">Contact</a>
+          <a href="#about" class="en">About</a>
+          <a href="#about" class="fr">À propos</a>
+          <a href="#skills" class="en">Skills</a>
+          <a href="#skills" class="fr">Compétences</a>
+          <a href="projects.html" class="en">Projects</a>
+          <a href="projects.html" class="fr">Projets</a>
+          <a href="#experience" class="en">Experience</a>
+          <a href="#experience" class="fr">Expérience</a>
+          <a href="#contact" class="en">Contact</a>
+          <a href="#contact" class="fr">Contact</a>
         </nav>
         <div class="nav-cta">
-          <a href="#contact" class="btn-sm">Contact</a>
-          <a href="#" class="btn-sm primary" target="_blank" rel="noopener">Download CV</a>
+          <button class="btn-sm" id="lang-en">EN</button>
+          <button class="btn-sm" id="lang-fr">FR</button>
+          <a href="#contact" class="btn-sm en">Contact</a>
+          <a href="#contact" class="btn-sm fr">Contact</a>
         </div>
       </div>
     </header>
@@ -632,31 +605,50 @@
       <!-- HERO -->
       <section class="hero">
         <div>
-          <div class="hero-pill">
+          <div class="hero-pill en">
             <i class="fa-solid fa-circle-dot"></i>
             Open to internships · Application Support · Data/Business Analysis
           </div>
-          <h1 class="hero-title">IT Support & Application Support <br> Junior Data & Business Analyst (MIAGE)</h1>
-          <p class="hero-subtitle">
+          <div class="hero-pill fr">
+            <i class="fa-solid fa-circle-dot"></i>
+            Disponible pour un stage · Support Applicatif · Data/Business Analysis
+          </div>
+
+          <h1 class="hero-title en">IT Support & Application Support<br>Junior Data & Business Analyst (MIAGE)</h1>
+          <h1 class="hero-title fr">Support Informatique & Support Applicatif<br>Junior Data & Business Analyst (MIAGE)</h1>
+
+          <p class="hero-subtitle en">
             I combine 5+ years of IT Support and Information Systems experience in banking with
             a MIAGE Master 2IS to bridge <strong>technical operations, data insights, and business needs</strong>.
           </p>
+          <p class="hero-subtitle fr">
+            Je combine plus de 5 ans d'expérience en support informatique et systèmes d'information
+            dans le secteur bancaire avec un Master MIAGE 2IS pour relier
+            <strong>opérations techniques, données et besoins métiers</strong>.
+          </p>
+
           <div class="hero-tags">
             <span class="tag">SQL · Power BI · Python</span>
-            <span class="tag">IT Support · Application Support</span>
+            <span class="tag en">IT Support · Application Support</span>
+            <span class="tag fr">Support informatique · Support applicatif</span>
             <span class="tag">Business Intelligence · Process Mining</span>
-            <span class="tag">MIAGE 2IS – Toulouse Capitole</span>
+            <span class="tag en">MIAGE 2IS – Toulouse Capitole</span>
+            <span class="tag fr">MIAGE 2IS – Toulouse Capitole</span>
           </div>
+
           <div class="hero-actions">
             <a href="https://github.com/MintesnotYIMER" class="btn-lg primary" target="_blank" rel="noopener">
-              <i class="fa-brands fa-github"></i> View GitHub
+              <i class="fa-brands fa-github"></i> GitHub
             </a>
             <a href="https://www.linkedin.com" class="btn-lg" target="_blank" rel="noopener">
-              <i class="fa-brands fa-linkedin"></i> View LinkedIn
+              <i class="fa-brands fa-linkedin"></i> LinkedIn
             </a>
           </div>
-          <div class="hero-note">
+          <div class="hero-note en">
             Currently looking for an internship in <strong>Application Support, Data Analysis, or Business Analysis</strong>.
+          </div>
+          <div class="hero-note fr">
+            Actuellement à la recherche d’un stage en <strong>Support Applicatif, Data Analysis ou Business Analysis</strong>.
           </div>
         </div>
 
@@ -664,21 +656,26 @@
           <div class="hero-card">
             <div class="hero-avatar">M</div>
             <h2>Mintesnot Yimer</h2>
-            <p>IT Support & Application Support · Junior Data & Business Analyst</p>
+            <p class="en">IT Support & Application Support · Junior Data & Business Analyst</p>
+            <p class="fr">Support informatique & support applicatif · Junior Data & Business Analyst</p>
             <p><i class="fa-solid fa-location-dot"></i> Toulouse, France</p>
             <div class="hero-chip-row">
-              <span class="chip">5+ years IT Support</span>
-              <span class="chip">Banking Sector</span>
+              <span class="chip en">5+ years IT Support</span>
+              <span class="chip fr">5+ ans de support IT</span>
+              <span class="chip en">Banking Sector</span>
+              <span class="chip fr">Secteur bancaire</span>
               <span class="chip">MIAGE 2IS</span>
             </div>
             <div class="hero-stats">
               <div class="hero-stat">
                 <span><strong>5+ yrs</strong></span>
-                <span>IT & IS Experience</span>
+                <span class="en">IT & IS Experience</span>
+                <span class="fr">Expérience IT & SI</span>
               </div>
               <div class="hero-stat">
                 <span><strong>4+</strong></span>
-                <span>Data / AI Projects</span>
+                <span class="en">Data / AI Projects</span>
+                <span class="fr">Projets Data / IA</span>
               </div>
             </div>
           </div>
@@ -687,31 +684,45 @@
 
       <!-- ABOUT & SKILLS -->
       <section id="about">
-        <div class="section-title">About Me</div>
-        <div class="section-subtitle">
+        <div class="section-title en">About Me</div>
+        <div class="section-title fr">À propos de moi</div>
+        <div class="section-subtitle en">
           IT Support & Application Support professional transitioning into Data Analysis and Business Analysis.
         </div>
+        <div class="section-subtitle fr">
+          Professionnel du support informatique et applicatif, en transition vers la Data Analysis et la Business Analysis.
+        </div>
+
         <div class="two-col">
           <div class="card">
-            <h3>Who I am</h3>
-            <p>
-              I am an IT professional with <strong>5+ years of experience</strong> in IT Support, System Administration,
+            <h3 class="en">Who I am</h3>
+            <h3 class="fr">Qui je suis</h3>
+            <p class="en">
+              I am an IT professional with <strong>5+ years of experience</strong> in IT Support, System Administration
               and Application Support in the banking sector. I am currently pursuing a
               <strong>Master MIAGE 2IS – Innovative Information Systems</strong> at Université Toulouse Capitole.
             </p>
-            <p>
-              I enjoy solving technical problems, analyzing data, improving workflows, and building clear dashboards
-              that help stakeholders make better decisions. My hybrid profile allows me to connect <strong>IT operations,
-              data insights, and business expectations</strong>.
+            <p class="fr">
+              Je suis un professionnel de l’IT avec <strong>plus de 5 ans d’expérience</strong> en support informatique,
+              administration système et support applicatif dans le secteur bancaire. Je prépare actuellement un
+              <strong>Master MIAGE 2IS – Systèmes d’Information Innovants</strong> à l’Université Toulouse Capitole.
             </p>
-            <p>
-              I'm actively looking for an internship in <strong>Application Support, Data Analysis, Business Analysis,</strong>
-              or <strong>Functional IT roles</strong>, where I can bring both my support experience and analytical skills.
+
+            <p class="en">
+              I enjoy solving technical problems, analyzing data, improving workflows, and building dashboards
+              that help stakeholders make better decisions. My hybrid profile connects
+              <strong>IT operations, data insights, and business expectations</strong>.
+            </p>
+            <p class="fr">
+              J’aime résoudre des problèmes techniques, analyser les données, améliorer les processus
+              et construire des tableaux de bord qui facilitent la prise de décision. Mon profil hybride
+              relie <strong>opérations IT, données et besoins métiers</strong>.
             </p>
           </div>
 
           <div id="skills" class="card">
-            <h3>Skills Overview</h3>
+            <h3 class="en">Skills Overview</h3>
+            <h3 class="fr">Vue d’ensemble des compétences</h3>
             <div class="skills-grid">
               <div class="skill-block">
                 <h4>Data & Tools</h4>
@@ -735,18 +746,20 @@
                 </ul>
               </div>
               <div class="skill-block">
-                <h4>IT & Application Support</h4>
+                <h4 class="en">IT & Application Support</h4>
+                <h4 class="fr">Support IT & applicatif</h4>
                 <ul class="skill-list">
                   <li>Active Directory, Windows Server</li>
                   <li>Linux (basics), Networking</li>
                   <li>ERP User Management & Access Control</li>
                   <li>Incident & Problem Management (ITIL mindset)</li>
                   <li>System Monitoring & Troubleshooting</li>
-                  <li>Ticketing Tools (e.g., ServiceNow, Jira)</li>
+                  <li>Ticketing Tools (ServiceNow, Jira)</li>
                 </ul>
               </div>
               <div class="skill-block">
-                <h4>Soft Skills & Other</h4>
+                <h4 class="en">Soft Skills & Other</h4>
+                <h4 class="fr">Soft skills & autres</h4>
                 <ul class="skill-list">
                   <li>Analytical Thinking & Problem Solving</li>
                   <li>Communication with Technical & Business Teams</li>
@@ -761,90 +774,33 @@
         </div>
       </section>
 
-      <!-- PROJECTS -->
+      <!-- PROJECTS TEASER -->
       <section id="projects">
-        <div class="section-title">Projects</div>
-        <div class="section-subtitle">
-          A selection of academic and personal projects in data analysis, process intelligence, and AI.
+        <div class="section-title en">Featured Projects</div>
+        <div class="section-title fr">Projets en avant</div>
+        <div class="section-subtitle en">
+          A selection of academic and personal projects. See all on the <a href="projects.html">projects page</a>.
+        </div>
+        <div class="section-subtitle fr">
+          Une sélection de projets académiques et personnels. Voir tous les projets sur la <a href="projects.html">page projets</a>.
         </div>
         <div class="projects-grid">
-          <!-- BPI Project -->
           <div class="project-card">
             <div class="project-badge">
-              <i class="fa-solid fa-diagram-project"></i> Business Process Intelligence
+              <i class="fa-solid fa-diagram-project"></i> BPI
             </div>
-            <h3>Flood Crisis Management – Process Mining</h3>
-            <p>
+            <h3 class="en">Flood Crisis Management – Process Mining</h3>
+            <h3 class="fr">Gestion de crise d’inondation – Process Mining</h3>
+            <p class="en">
               Process mining project analyzing flood crisis response workflows using event logs.
-              Extracted KPIs, identified bottlenecks, and proposed improvements to the crisis management process.
+              Extracted KPIs, identified bottlenecks, and proposed improvements.
             </p>
-            <div class="project-tags">
-              <span class="project-tag">Process Mining</span>
-              <span class="project-tag">BPI</span>
-              <span class="project-tag">Python</span>
-            </div>
+            <p class="fr">
+              Projet de process mining analysant les workflows de gestion de crise d’inondation
+              à partir de journaux d’événements. Extraction d’indicateurs clés et détection de goulots d’étranglement.
+            </p>
             <a class="project-link" href="https://github.com/MintesnotYIMER/business-process-intelligence-flood-management" target="_blank" rel="noopener">
-              <i class="fa-brands fa-github"></i> View repository
-            </a>
-          </div>
-
-          <!-- Air Quality -->
-          <div class="project-card">
-            <div class="project-badge">
-              <i class="fa-solid fa-chart-line"></i> Data Analysis & Visualization
-            </div>
-            <h3>Air Quality Analysis (USA, 2013–2023)</h3>
-            <p>
-              Exploratory analysis of 10 years of air quality data with Python and Power BI. 
-              Built dashboards to visualize pollutant trends, geo-distribution, and correlations.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Power BI</span>
-              <span class="project-tag">Pandas</span>
-            </div>
-            <a class="project-link" href="#" target="_blank" rel="noopener">
-              <i class="fa-brands fa-github"></i> Add GitHub link here
-            </a>
-          </div>
-
-          <!-- Obesity ML -->
-          <div class="project-card">
-            <div class="project-badge">
-              <i class="fa-solid fa-brain"></i> Machine Learning
-            </div>
-            <h3>Obesity Prediction – Classification Model</h3>
-            <p>
-              Built a machine learning model to predict obesity risk using lifestyle and health indicators,
-              including data preprocessing, feature engineering, and model evaluation.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">Scikit-learn</span>
-              <span class="project-tag">EDA</span>
-            </div>
-            <a class="project-link" href="#" target="_blank" rel="noopener">
-              <i class="fa-brands fa-github"></i> Add GitHub link here
-            </a>
-          </div>
-
-          <!-- CSP Crossword -->
-          <div class="project-card">
-            <div class="project-badge">
-              <i class="fa-solid fa-puzzle-piece"></i> Algorithms & CSP
-            </div>
-            <h3>Crossword Solver – CSP with OR-Tools</h3>
-            <p>
-              Implemented a crossword puzzle solver using constraint satisfaction techniques with Google OR-Tools,
-              comparing search strategies for performance.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Python</span>
-              <span class="project-tag">OR-Tools</span>
-              <span class="project-tag">CSP</span>
-            </div>
-            <a class="project-link" href="#" target="_blank" rel="noopener">
-              <i class="fa-brands fa-github"></i> Add GitHub link here
+              <i class="fa-brands fa-github"></i> GitHub
             </a>
           </div>
         </div>
@@ -852,53 +808,71 @@
 
       <!-- EXPERIENCE & EDUCATION -->
       <section id="experience">
-        <div class="section-title">Experience & Education</div>
-        <div class="section-subtitle">
-          Professional background in IT & Information Systems, supported by a strong academic foundation in Computer Science and MIAGE.
+        <div class="section-title en">Experience & Education</div>
+        <div class="section-title fr">Expérience & Formation</div>
+        <div class="section-subtitle en">
+          Professional background in IT & Information Systems, supported by Computer Science and MIAGE.
+        </div>
+        <div class="section-subtitle fr">
+          Parcours professionnel en IT & Systèmes d’Information, soutenu par une formation en Informatique et MIAGE.
         </div>
 
         <div class="timeline">
           <div class="card">
-            <h3>Experience</h3>
+            <h3 class="en">Experience</h3>
+            <h3 class="fr">Expérience</h3>
 
             <div class="timeline-block">
-              <h3>Technical Helpdesk / Information Systems Officer</h3>
-              <div class="meta">Commercial Bank of Ethiopia · Aug 2019 – Sep 2024 · Addis Ababa</div>
+              <h3 class="en">Technical Helpdesk / Information Systems Officer</h3>
+              <h3 class="fr">Technicien Support Informatique / Responsable SI</h3>
+              <div class="meta en">Commercial Bank of Ethiopia · Aug 2019 – Sep 2024 · Addis Ababa</div>
+              <div class="meta fr">Commercial Bank of Ethiopia · Août 2019 – Sept 2024 · Addis-Abeba</div>
               <ul>
-                <li>Ensured availability and performance of IT infrastructure across multiple branches.</li>
-                <li>Maintained network systems, domain servers, and Active Directory.</li>
-                <li>Managed ERP user accounts and access rights to support operations securely.</li>
-                <li>Handled incident and problem resolution (L1/L2), following ITIL mindset.</li>
-                <li>Collaborated with infrastructure, security, and business teams to resolve complex issues.</li>
+                <li class="en">Ensured availability and performance of IT infrastructure across multiple branches.</li>
+                <li class="fr">Assurer la disponibilité et la performance de l’infrastructure IT dans plusieurs agences.</li>
+                <li class="en">Maintained network systems, domain servers, and Active Directory.</li>
+                <li class="fr">Supervision des systèmes réseau, serveurs de domaine et Active Directory.</li>
+                <li class="en">Managed ERP user accounts and access rights.</li>
+                <li class="fr">Gestion des comptes ERP et des droits d’accès.</li>
+                <li class="en">Handled incident and problem resolution (L1/L2) with an ITIL mindset.</li>
+                <li class="fr">Résolution d’incidents et de problèmes (N1/N2) avec une approche ITIL.</li>
               </ul>
             </div>
 
             <div class="timeline-block">
-              <h3>Co-founder & Web Developer (Part-time)</h3>
+              <h3 class="en">Co-founder & Web Developer (Part-time)</h3>
+              <h3 class="fr">Co-fondateur & Développeur Web (temps partiel)</h3>
               <div class="meta">Yohanneswendemageng Network Company · Jul 2021 – Jul 2022</div>
               <ul>
-                <li>Designed and developed the company website using WordPress, Elementor, and WPBakery.</li>
-                <li>Created responsive themes and improved UI/UX and site performance.</li>
-                <li>Maintained content updates and solved technical issues.</li>
+                <li class="en">Designed and developed the company website using WordPress, Elementor, and WPBakery.</li>
+                <li class="fr">Conception et développement du site web de l’entreprise avec WordPress, Elementor et WPBakery.</li>
+                <li class="en">Created responsive themes and improved performance and UX.</li>
+                <li class="fr">Création de thèmes responsifs et amélioration des performances et de l’ergonomie.</li>
               </ul>
             </div>
           </div>
 
           <div class="card">
-            <h3>Education</h3>
+            <h3 class="en">Education</h3>
+            <h3 class="fr">Formation</h3>
+
             <div class="timeline-block">
-              <h3>Master MIAGE 2IS – Innovative Information Systems</h3>
-              <div class="meta">Université Toulouse Capitole · 2024 – 2026</div>
+              <h3 class="en">Master MIAGE 2IS – Innovative Information Systems</h3>
+              <h3 class="fr">Master MIAGE 2IS – Systèmes d’Information Innovants</h3>
+              <div class="meta en">Université Toulouse Capitole · 2024 – 2026</div>
+              <div class="meta fr">Université Toulouse Capitole · 2024 – 2026</div>
               <ul>
-                <li>Data Analysis & Visualization, Advanced Artificial Intelligence.</li>
-                <li>Advanced Databases, Business Intelligence, Business Process Modelling.</li>
+                <li>Data Analysis & Visualization, Advanced AI, Advanced Databases.</li>
+                <li>Business Intelligence, Business Process Modelling.</li>
                 <li>Internet of Things, Cybersecurity, Project Management.</li>
               </ul>
             </div>
 
             <div class="timeline-block">
-              <h3>Bachelor of Science in Computer Science</h3>
-              <div class="meta">St. Mary’s University · 2014 – 2018</div>
+              <h3 class="en">Bachelor of Science in Computer Science</h3>
+              <h3 class="fr">Licence en Informatique</h3>
+              <div class="meta en">St. Mary’s University · 2014 – 2018</div>
+              <div class="meta fr">St. Mary’s University · 2014 – 2018</div>
               <ul>
                 <li>Software Engineering, Internet Programming, Advanced Networking.</li>
                 <li>Applied Mathematics, Object-Oriented Programming.</li>
@@ -911,24 +885,33 @@
 
       <!-- CONTACT -->
       <section id="contact">
-        <div class="section-title">Contact</div>
-        <div class="section-subtitle">
+        <div class="section-title en">Contact</div>
+        <div class="section-title fr">Contact</div>
+        <div class="section-subtitle en">
           Interested in working together or discussing an opportunity? Feel free to reach out.
+        </div>
+        <div class="section-subtitle fr">
+          Intéressé par une collaboration ou une opportunité ? N’hésitez pas à me contacter.
         </div>
 
         <div class="contact-grid">
           <div class="card">
-            <h3>Let’s connect</h3>
-            <p style="font-size:0.85rem; color:var(--muted);">
-              I am open to internships and opportunities in <strong>Application Support, Data Analysis, Business Analysis,</strong>
-              and related IT/functional roles.
+            <h3 class="en">Let’s connect</h3>
+            <h3 class="fr">Restons en contact</h3>
+            <p style="font-size:0.85rem; color:var(--muted);" class="en">
+              I am open to internships and opportunities in <strong>Application Support, Data Analysis,
+              Business Analysis</strong> and related IT / functional roles.
+            </p>
+            <p style="font-size:0.85rem; color:var(--muted);" class="fr">
+              Je suis ouvert aux stages et opportunités en <strong>Support Applicatif, Data Analysis,
+              Business Analysis</strong> et rôles IT/ fonctionnels associés.
             </p>
 
             <div class="contact-item">
               <span class="contact-pill"><i class="fa-solid fa-envelope"></i> mintesnot.yimer@ut-capitole.fr</span>
             </div>
             <div class="contact-item">
-              <span class="contact-pill"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</span>
+              <span class="contact-pill"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
             </div>
             <div class="contact-item">
               <span class="contact-pill"><i class="fa-brands fa-github"></i> github.com/MintesnotYIMER</span>
@@ -936,17 +919,17 @@
           </div>
 
           <div class="card">
-            <h3>Quick message</h3>
-            <!-- Non-functional form (for static GitHub Pages) -->
+            <h3 class="en">Quick message</h3>
+            <h3 class="fr">Message rapide</h3>
             <form class="contact-form">
-              <input type="text" name="name" placeholder="Your name" />
-              <input type="email" name="email" placeholder="Your email" />
-              <textarea name="message" rows="4" placeholder="Your message"></textarea>
+              <input type="text" name="name" placeholder="Your name / Votre nom" />
+              <input type="email" name="email" placeholder="Your email / Votre email" />
+              <textarea name="message" rows="4" placeholder="Your message / Votre message"></textarea>
               <button type="button" class="btn-lg primary">
-                <i class="fa-solid fa-paper-plane"></i> Send (use email above)
+                <i class="fa-solid fa-paper-plane"></i> Email me
               </button>
               <p style="font-size:0.7rem; color:var(--muted); margin:0.4rem 0 0;">
-                This is a static form. To contact me, please send an email directly.
+                This is a static form. Please email me directly using the address above.
               </p>
             </form>
           </div>
@@ -960,8 +943,15 @@
   </div>
 
   <script>
-    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const root = document.documentElement;
+    document.getElementById("lang-en").addEventListener("click", () => {
+      root.setAttribute("data-lang", "en");
+    });
+    document.getElementById("lang-fr").addEventListener("click", () => {
+      root.setAttribute("data-lang", "fr");
+    });
   </script>
 </body>
 </html>
