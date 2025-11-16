@@ -1,60 +1,413 @@
-<!-- ONLY THE TOP PART CHANGES – REST = SAME CONTENT AS index.html -->
-<div class="nav-cta">
-    <button class="btn-sm" id="lang-en">EN</button>
-    <button class="btn-sm" id="lang-fr">FR</button>
-    <a href="index.html" class="btn-sm">🌙</a>
-</div>
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mintesnot Yimer | IT Support & Data/Business Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Mintesnot Yimer - IT Support & Application Support | Junior Data & Business Analyst (MIAGE)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<style>
-  :root {
-    --bg: #f3f4f6;
-    --bg-alt: #ffffff;
-    --accent: #2563eb;
-    --accent-soft: rgba(37, 99, 235, 0.08);
-    --text: #111827;
-    --muted: #6b7280;
-    --card-bg: #ffffff;
-    --border: #e5e7eb;
-    --radius-lg: 18px;
-    --radius-md: 12px;
-    --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
-    --max-width: 1050px;
-  }
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --bg-alt: #ffffff;
+      --accent: #3b82f6;
+      --accent-soft: rgba(59,130,246,0.12);
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.06);
+      --max-width: 1050px;
+    }
 
-  body {
-    margin: 0;
-    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    background: radial-gradient(circle at top, #e5f0ff 0, #f9fafb 40%, #f3f4f6 100%);
-    color: var(--text);
-  }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-  header {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.9), transparent);
-    border-bottom: 1px solid rgba(209,213,219,0.7);
-    backdrop-filter: blur(14px);
-  }
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, sans-serif;
+      background: radial-gradient(circle at top, #e8f0ff 0%, #f7f9fc 60%, #f3f4f6 100%);
+      color: var(--text);
+    }
 
-  .card {
-    background: #ffffff;
-    border-radius: var(--radius-lg);
-    padding: 1.4rem 1.6rem;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-soft);
-  }
+    a { color: inherit; text-decoration: none; }
 
-  .project-card {
-    background: #ffffff;
-    border-radius: var(--radius-md);
-    padding: 1.1rem 1.2rem 1.2rem;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-soft);
-  }
+    /* Language toggle */
+    [data-lang="en"] .fr { display: none; }
+    [data-lang="fr"] .en { display: none; }
 
-  footer {
-    background: #f9fafb;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-  }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid var(--border);
+    }
 
-  /* keep rest of CSS similar but with lighter colors where needed */
-</style>
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #60a5fa, #2563eb);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .nav-title { font-size: 0.95rem; font-weight: 600; }
+    .nav-sub { font-size: 0.75rem; color: var(--muted); }
+
+    .nav-links {
+      display: flex;
+      gap: 1.3rem;
+      font-size: 0.85rem;
+    }
+    .nav-links a {
+      color: var(--muted);
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+      border-color: #d1d5db;
+    }
+
+    .btn-sm {
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: white;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .btn-sm.primary {
+      background: linear-gradient(120deg, #3b82f6, #4f46e5);
+      border: none;
+      color: white;
+      box-shadow: var(--shadow-soft);
+    }
+
+    main { flex: 1; }
+
+    section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2.5rem;
+      padding-top: 3rem;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .hero-pill {
+      background: var(--accent-soft);
+      padding: 0.35rem 0.7rem;
+      font-size: 0.75rem;
+      color: var(--accent);
+      border-radius: 999px;
+      border: 1px solid rgba(59,130,246,0.4);
+      margin-bottom: 0.6rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 1.3rem;
+    }
+
+    .tag {
+      background: #eef2ff;
+      border-radius: 999px;
+      padding: 0.25rem 0.65rem;
+      font-size: 0.75rem;
+      color: #4338ca;
+      border: 1px solid #c7d2fe;
+    }
+
+    .hero-actions .btn-lg {
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: white;
+      color: var(--text);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-lg.primary {
+      background: linear-gradient(120deg, #3b82f6, #4f46e5);
+      border: none;
+      color: white;
+    }
+
+    .hero-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.7rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .hero-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      margin: 0 auto 1rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      font-weight: 700;
+    }
+
+    /* CARDS */
+    .card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 1rem;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .project-link { color: #2563eb; font-weight: 500; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <div class="nav-left">
+      <div class="logo-circle">M</div>
+      <div>
+        <div class="nav-title">Mintesnot Yimer</div>
+        <span class="nav-sub en">IT Support · App Support · Data & Business Analysis</span>
+        <span class="nav-sub fr">Support Informatique · Support Applicatif · Data & Business Analysis</span>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#about" class="en">About</a>
+      <a href="#about" class="fr">À propos</a>
+      <a href="#skills" class="en">Skills</a>
+      <a href="#skills" class="fr">Compétences</a>
+      <a href="projects.html" class="en">Projects</a>
+      <a href="projects.html" class="fr">Projets</a>
+      <a href="#contact" class="en">Contact</a>
+      <a href="#contact" class="fr">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <button class="btn-sm" id="lang-en">EN</button>
+      <button class="btn-sm" id="lang-fr">FR</button>
+      <a href="index.html" class="btn-sm">🌙 Dark</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="hero-pill en"><i class="fa-solid fa-circle-dot"></i> Open to internships</div>
+      <div class="hero-pill fr"><i class="fa-solid fa-circle-dot"></i> Disponible pour un stage</div>
+
+      <h1 class="hero-title en">IT Support & Application Support<br>Junior Data & Business Analyst (MIAGE)</h1>
+      <h1 class="hero-title fr">Support Informatique & Support Applicatif<br>Junior Data & Business Analyst (MIAGE)</h1>
+
+      <p class="hero-subtitle en">
+        I combine 5+ years in IT Support and Information Systems with a MIAGE Master 2IS
+        to bridge <strong>technical operations, data insights, and business needs</strong>.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://github.com/MintesnotYIMER" class="btn-lg primary">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com" class="btn-lg">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-avatar">M</div>
+      <h2>Mintesnot Yimer</h2>
+      <p>IT Support · Application Support · Data/Business Analysis</p>
+      <p><i class="fa-solid fa-location-dot"></i> Toulouse, France</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="card">
+      <h3 class="en">About Me</h3>
+      <p class="en">
+        IT professional with 5+ years of experience in technical support and information systems,
+        currently pursuing a MIAGE Master 2IS to transition into Data Analysis and Business Analysis.
+      </p>
+
+      <h3 class="fr">À propos de moi</h3>
+      <p class="fr">
+        Professionnel IT avec plus de 5 ans d’expérience en support informatique et systèmes d'information,
+        actuellement en Master MIAGE 2IS pour évoluer vers la Data Analysis et la Business Analysis.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="card">
+      <h3 class="en">Skills</h3>
+      <h3 class="fr">Compétences</h3>
+
+      <div class="skills-grid">
+        <div>
+          <h4>Data & Tools</h4>
+          <ul>
+            <li>SQL (MySQL, Oracle)</li>
+            <li>Power BI, Excel</li>
+            <li>Python (Pandas, Matplotlib)</li>
+            <li>Git, GitHub</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Concepts</h4>
+          <ul>
+            <li>BI & Dashboards</li>
+            <li>Process Mining</li>
+            <li>ML Basics</li>
+            <li>Data Cleaning</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>IT Support</h4>
+          <ul>
+            <li>Active Directory</li>
+            <li>Windows Server</li>
+            <li>Networking</li>
+            <li>Ticketing Tools</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Soft Skills</h4>
+          <ul>
+            <li>Communication</li>
+            <li>Problem Solving</li>
+            <li>Documentation</li>
+            <li>Teamwork</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS PREVIEW -->
+  <section id="projects">
+    <h3 class="en">Featured Projects</h3>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <h4>Flood Crisis Process Mining</h4>
+        <p>Analyzed crisis workflows using BPI & event logs.</p>
+        <a class="project-link" href="https://github.com/MintesnotYIMER/business-process-intelligence-flood-management">View on GitHub</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="card">
+      <h3>Contact</h3>
+      <p>Email: <strong>mintesnot.yimer@ut-capitole.fr</strong></p>
+      <p>GitHub: <strong>MintesnotYIMER</strong></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Mintesnot Yimer · Light Mode Version
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  document.getElementById("lang-en").onclick = () =>
+    document.documentElement.setAttribute("data-lang", "en");
+
+  document.getElementById("lang-fr").onclick = () =>
+    document.documentElement.setAttribute("data-lang", "fr");
+</script>
+
+</body>
+</html>
