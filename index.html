@@ -922,17 +922,71 @@
           <div class="card">
             <h3 class="en">Quick message</h3>
             <h3 class="fr">Message rapide</h3>
-            <form class="contact-form">
-              <input type="text" name="name" placeholder="Your name / Votre nom" />
-              <input type="email" name="email" placeholder="Your email / Votre email" />
-              <textarea name="message" rows="4" placeholder="Your message / Votre message"></textarea>
-              <button type="button" class="btn-lg primary">
-                <i class="fa-solid fa-paper-plane"></i> Email me
-              </button>
-              <p style="font-size:0.7rem; color:var(--muted); margin:0.4rem 0 0;">
-                This is a static form. Please email me directly using the address above.
-              </p>
-            </form>
+           <form
+  class="contact-form"
+  action="https://formspree.io/f/xeovdzye"
+  method="POST"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your name / Votre nom"
+    required
+  />
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Your email / Votre email"
+    required
+  />
+
+  <textarea
+    name="message"
+    rows="4"
+    placeholder="Your message / Votre message"
+    required
+  ></textarea>
+
+  <button type="submit" class="btn-lg primary">
+    <i class="fa-solid fa-paper-plane"></i> Email me
+  </button>
+
+  <p
+    id="form-status"
+    style="font-size:0.7rem; color:var(--muted); margin:0.4rem 0 0;"
+  ></p>
+</form>
+
+<script>
+  const form = document.querySelector(".contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        status.textContent = "Thank you! Your message has been sent.";
+        form.reset();
+      } else {
+        status.textContent =
+          "Oops! Something went wrong. Please try again later.";
+      }
+    } catch (error) {
+      status.textContent =
+        "Network error. Please check your connection and try again.";
+    }
+  });
+</script>
+
           </div>
         </div>
       </section>
